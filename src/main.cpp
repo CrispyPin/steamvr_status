@@ -1,5 +1,4 @@
 #include "../lib/openvr.h"
-#include <cstdio>
 #include <fstream>
 #include <signal.h>
 #include <string>
@@ -35,6 +34,13 @@ int main() {
 	while (!should_exit) {
 		update();
 		sleep(1);
+
+		vr::VREvent_t event;
+		while (vr_sys->PollNextEvent(&event, sizeof(vr::VREvent_t))) {
+			if (event.eventType == vr::VREvent_Quit) {
+				should_exit = true;
+			}
+		}
 	}
 
 	std::remove(OUT_PATH);
