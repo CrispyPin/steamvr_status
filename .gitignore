@@ -1,0 +1,5 @@
+vr_status
+steamvr-status
+.vscode/
+*.zip
+*.tar.xz

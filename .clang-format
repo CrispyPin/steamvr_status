@@ -1,0 +1,5 @@
+BasedOnStyle: Microsoft
+UseTab: Always
+ReflowComments: false
+ColumnLimit: 0
+BreakBeforeBraces: Attach
